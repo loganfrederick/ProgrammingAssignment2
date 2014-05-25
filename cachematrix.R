@@ -25,7 +25,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Caches the solution to the inverse matrix
+## Stores the solution to the inverse matrix in easily accessed memory
 
 cacheSolve <- function(x, ...) {
   invMatrix <- x$getInverse()
@@ -33,8 +33,8 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(invMatrix)
   }
-  data <- x$get()
-  invMatrix <- solve(data, ...)
+  m <- x$get()
+  invMatrix <- solve(m)
   x$setInverse(invMatrix)
   invMatrix
 }
