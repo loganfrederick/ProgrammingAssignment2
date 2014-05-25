@@ -35,6 +35,6 @@ cacheSolve <- function(x, ...) {
   }
   data <- x$get()
   invMatrix <- solve(data, ...)
-  x$setmean(invMatrix)
+  x$setInverse(invMatrix)
   invMatrix
 }
